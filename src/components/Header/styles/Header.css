@@ -33,3 +33,29 @@
 .badge {
   right: 105px;
 }
+.dropdown-menu {
+  width: 177px;
+  height: 350px;
+  overflow-x: hidden;
+}
+.dropdown-item > .card {
+  margin: auto;
+  width: 155px;
+  height: 75px !important;
+}
+img.dropdown-image {
+  margin: auto;
+  width: 45px;
+  height: 60px;
+  object-fit: contain;
+}
+h5.dropdown-title {
+  font-size: 15px;
+  margin-left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+p.dropdown-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

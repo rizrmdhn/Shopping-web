@@ -78,7 +78,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <HeaderDesktop quantity={this.state.quantity} />
+        <HeaderDesktop quantity={this.state.quantity} lists={this.state.lists} />
         <ShopItemComponents
           lists={this.state.lists}
           AddToCart={this.onAddToCardHandler}

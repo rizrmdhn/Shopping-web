@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles/Header.css";
-import { Input, Nav, Navbar, NavbarBrand, NavItem, NavLink } from "reactstrap";
+import { Input, Nav, NavItem, NavLink } from "reactstrap";
+import DropDownMenu from "./DropDownMenu";
 
-function HeaderDesktop({ quantity }) {
+function HeaderDesktop({ quantity, lists }) {
   return (
     <div className="HeaderDesktop sticky-xxl-top container-fluid text-center">
       <div className="row mt-3 p-2">
@@ -33,13 +34,19 @@ function HeaderDesktop({ quantity }) {
           <div className="Header-3">
             <Nav>
               <NavItem className="m-auto">
-                <Input bsSize="sm" type="search" />
+                <Input
+                  className="dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  bsSize="sm"
+                  type="search"
+                />
+                <DropDownMenu lists={lists} />
               </NavItem>
               <NavItem className="m-auto">
                 <NavLink>
                   <span className="position-absolute translate-middle badge rounded-pill bg-danger">
                     {quantity}
-                    <span className="visually-hidden">unread messages</span>
                   </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
