@@ -1,0 +1,37 @@
+.card {
+  width: 350px;
+  height: 350px !important;
+  margin: 20px 25px;
+  cursor: pointer;
+}
+.card:hover > .card-body > .card-footer > a {
+  opacity: 100;
+}
+.card > .card-img-top {
+  margin: 15px auto;
+  overflow: hidden;
+  width: 200px;
+  height: 155px;
+  object-fit: contain;
+  transition: transform .5s ease;
+}
+.card > .card-img-top:hover {
+  transform: scale(1.5);
+}
+.card-footer {
+  margin: auto;
+  border: none !important;
+}
+.card-footer > a {
+  color: whitesmoke;
+  background-color: black;
+  margin: auto;
+  width: 100%;
+  opacity: 0;
+  transition: 500ms;
+}
+.card-footer > a:hover {
+  color: rgb(223, 223, 223);
+  background-color: grey;
+  margin: auto;
+}

@@ -1,0 +1,22 @@
+.modal-body > .card {
+  width: 650px;
+  border: none !important;
+  margin: auto;
+}
+.modal-card-title {
+  margin: auto;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.modal-card-text {
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.modal-image {
+  margin: auto;
+  overflow: hidden;
+  width: 250px;
+  height: 350px;
+  object-fit: contain;
+}
