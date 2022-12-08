@@ -7,6 +7,9 @@
 .card:hover > .card-body > .card-footer > a {
   opacity: 100;
 }
+.card:hover > .card-body > .item-border {
+  width: 200px;
+}
 .card > .card-img-top {
   margin: 15px auto;
   overflow: hidden;
@@ -38,4 +41,12 @@
   color: none !important;
   background-color: white !important;
   border-top: none !important;
+}
+.item-border {
+  margin: auto;
+  margin-top: 10px;
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  transition: 500ms ease;
 }

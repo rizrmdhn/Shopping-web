@@ -1,11 +1,15 @@
 import React from "react";
 import axios from "axios";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import HeaderDesktop from "./components/Header/HeaderDesktop";
 import ShopItemComponents from "./components/Body/ShopItemComponents";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "animate.css";
 import DetailItemsComponent from "./components/Body/DetailItemsComponent";
+import CartListComponent from "./components/Body/CartListComponent";
+import FaqComponent from "./components/Body/FaqComponent";
+import ContactComponent from "./components/Body/ContactComponent";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -32,17 +36,20 @@ class App extends React.Component {
     super(props);
     this.state = {
       lists: [],
+      searchList: [],
       cart: [],
       quantity: 0,
       showCart: false,
     };
     this.onAddToCardHandler = this.onAddToCardHandler.bind(this);
+    this.onSearchHandler = this.onSearchHandler.bind(this);
   }
 
   componentDidMount() {
     axios.get(api).then((item) => {
       this.setState({
         lists: item.data,
+        searchList: item.data,
       });
     });
   }
@@ -75,14 +82,47 @@ class App extends React.Component {
     });
     console.log(this.state.cart);
   }
+
+  onSearchHandler(text) {
+    if (text.length !== 0 && text.trim() !== "") {
+      this.setState({
+        searchList: this.state.searchList.filter((lists) =>
+          lists.title.toLowerCase().includes(text.toLowerCase())
+        ),
+      });
+    } else {
+      this.setState({
+        searchList: this.state.lists,
+      });
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <HeaderDesktop quantity={this.state.quantity} lists={this.state.lists} />
-        <ShopItemComponents
-          lists={this.state.lists}
-          AddToCart={this.onAddToCardHandler}
-        />
+        <HashRouter>
+          <HeaderDesktop
+            quantity={this.state.quantity}
+            lists={this.state.searchList}
+            onSearch={this.onSearchHandler}
+          />
+
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <ShopItemComponents
+                  lists={this.state.lists}
+                  AddToCart={this.onAddToCardHandler}
+                />
+              }
+            />
+            <Route exact path="/FAQ" element={<FaqComponent />} />
+            <Route exact path="/Contact" element={<ContactComponent />} />
+            <Route exact path="/Cart" element={<CartListComponent />} />
+          </Routes>
+        </HashRouter>
         {/* // Modal Item // */}
         <DetailItemsComponent
           lists={this.state.lists}

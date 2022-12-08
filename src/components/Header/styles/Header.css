@@ -35,16 +35,18 @@
 }
 .dropdown-menu {
   width: 177px;
-  height: 350px;
+  height: 345px;
   overflow-x: hidden;
+  scrollbar-width: thin;
 }
 .dropdown-item > .card {
   margin: auto;
+  margin-left: -10px;
   width: 155px;
   height: 75px !important;
 }
 img.dropdown-image {
-  margin: auto;
+  margin: 5px 5px;
   width: 45px;
   height: 60px;
   object-fit: contain;
