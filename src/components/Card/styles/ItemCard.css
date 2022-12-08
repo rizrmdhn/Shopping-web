@@ -13,15 +13,12 @@
   width: 200px;
   height: 155px;
   object-fit: contain;
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 .card > .card-img-top:hover {
   transform: scale(1.5);
 }
-.card-footer {
-  margin: auto;
-  border: none !important;
-}
+
 .card-footer > a {
   color: whitesmoke;
   background-color: black;
@@ -34,4 +31,11 @@
   color: rgb(223, 223, 223);
   background-color: grey;
   margin: auto;
+}
+.ShopItemContainer > .card > .card-body > .card-footer {
+  margin: auto;
+  border: none !important;
+  color: none !important;
+  background-color: white !important;
+  border-top: none !important;
 }
