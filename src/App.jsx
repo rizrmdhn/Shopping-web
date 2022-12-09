@@ -10,6 +10,7 @@ import DetailItemsComponent from "./components/Body/DetailItemsComponent";
 import CartListComponent from "./components/Body/CartListComponent";
 import FaqComponent from "./components/Body/FaqComponent";
 import ContactComponent from "./components/Body/ContactComponent";
+import CartOffCanvas from "./components/offcanvas/CartOffCanvas";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -120,9 +121,11 @@ class App extends React.Component {
             />
             <Route exact path="/FAQ" element={<FaqComponent />} />
             <Route exact path="/Contact" element={<ContactComponent />} />
-            <Route exact path="/Cart" element={<CartListComponent />} />
+            <Route exact path="/Cart" element={<CartListComponent cart={this.state.cart} />} />
           </Routes>
         </HashRouter>
+        {/* // OffCanvas // */}
+        <CartOffCanvas />
         {/* // Modal Item // */}
         <DetailItemsComponent
           lists={this.state.lists}

@@ -1,7 +1,7 @@
 import React from "react";
 
 function FaqComponent() {
-  return <div>FaqComponent</div>;
+  return <div className="">FaqComponent</div>;
 }
 
 export default FaqComponent;
