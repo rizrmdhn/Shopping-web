@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/CartListComponent.css";
 
-function CartListComponent({ cart }) {
+function CartListComponent({ id, cart, subTotalPrice, AddToCart }) {
   return (
     <>
       {cart.length !== 0 ? (
@@ -13,23 +13,28 @@ function CartListComponent({ cart }) {
             </div>
             <div className="Line-1"></div>
             <div className="cart-item">
-              {cart.map((item) => {
+              {cart.map((list) => {
                 return (
-                  <div className="card mb-3" key={item.id}>
+                  <div className="card mb-3" key={list.id}>
                     <div className="row g-0">
                       <div className="col-2 m-auto">
                         <img
-                          src={item.image}
+                          src={list.image}
                           className="cart-item-image img-fluid rounded-start"
-                          alt={item.title}
+                          alt={list.title}
                         />
                       </div>
                       <div className="col-md-9">
                         <div className="card-body">
                           <div className="row mb-2">
                             <div className=" col-5 m-auto">
-                              <h5 className="card-title cart-item-title">
-                                {item.title}
+                              <h5
+                                className="card-title cart-item-title"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-title="Tooltip on top"
+                              >
+                                {list.title}
                               </h5>
                             </div>
                             <div className="col-3 m-auto">
@@ -39,19 +44,20 @@ function CartListComponent({ cart }) {
                                   width="16"
                                   height="16"
                                   fill="currentColor"
-                                  className="add bi bi-dash mb-1"
+                                  className="remove bi bi-dash mb-1"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                                 </svg>
-                                <p className="quantity">{item.quantity}</p>
+                                <p className="quantity">{list.quantity}</p>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   width="16"
                                   height="16"
                                   fill="currentColor"
-                                  className="remove bi bi-plus-lg mb-1"
+                                  className="add bi bi-plus-lg mb-1"
                                   viewBox="0 0 16 16"
+                                  onClick={() => AddToCart(list)}
                                 >
                                   <path
                                     fillRule="evenodd"
@@ -61,7 +67,7 @@ function CartListComponent({ cart }) {
                               </div>
                             </div>
                             <div className="col text-end m-auto me-3">
-                              <h5 className="cart-price">${item.totalPrice}</h5>
+                              <h5 className="cart-price">${list.totalPrice}</h5>
                             </div>
                             <div className="col-sm-1 m-auto">
                               <h5 className="cart-exit">
@@ -78,7 +84,10 @@ function CartListComponent({ cart }) {
                               </h5>
                             </div>
                           </div>
-                          <p className="card-text m-auto">${item.price}</p>
+                          <p className="card-text m-auto">${list.price}</p>
+                          <p className="card-text m-auto">
+                            Category: {list.category}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -95,14 +104,18 @@ function CartListComponent({ cart }) {
             <div className="order-summary">
               <div className="row mt-5">
                 <h5 className="subtotal col m-auto">Subtotal</h5>
-                <h5 class="subtotal-price col m-auto text-end">$</h5>
+                <h5 className="subtotal-price col m-auto text-end">
+                  ${subTotalPrice}
+                </h5>
               </div>
             </div>
             <div className="Line-2"></div>
             <div className="order-total">
               <div className="row mt-4">
                 <h4 className="total col m-auto">Total</h4>
-                <h4 class="total-price col m-auto text-end">$</h4>
+                <h4 className="total-price col m-auto text-end">
+                  ${subTotalPrice}
+                </h4>
               </div>
             </div>
             <button className="checkout-btn btn w-100 mt-4">Checkout</button>

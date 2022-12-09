@@ -22,11 +22,12 @@ const Toast = MySwal.mixin({
   timer: 1500,
   timerProgressBar: true,
   showClass: {
-    popup: "animate__animated animate__fadeInDown",
+    popup: "animate__animated animate__fadeInUp",
   },
   hideClass: {
-    popup: "animate__animated animate__fadeOutUp",
+    popup: "animate__animated animate__fadeOutDown",
   },
+  position: "bottom-right",
   didOpen: (toast) => {
     toast.addEventListener("mouseleave", Swal.resumeTimer);
   },
@@ -40,9 +41,11 @@ class App extends React.Component {
       searchList: [],
       cart: [],
       quantity: 0,
+      subTotalPrice: 0,
       showCart: false,
     };
     this.onAddToCardHandler = this.onAddToCardHandler.bind(this);
+    this.onRemoveFromCardHandler = this.onRemoveFromCardHandler.bind(this);
     this.onSearchHandler = this.onSearchHandler.bind(this);
   }
 
@@ -62,6 +65,7 @@ class App extends React.Component {
     if (existingItem) {
       existingItem.quantity++;
       existingItem.totalPrice += newItem.price;
+      this.state.subTotalPrice += newItem.price;
     } else {
       this.state.cart.push({
         id: newItem.id,
@@ -73,6 +77,7 @@ class App extends React.Component {
         quantity: 1,
         totalPrice: newItem.price,
       });
+      this.state.subTotalPrice += newItem.price;
     }
     this.setState({
       quantity: (this.state.quantity += 1),
@@ -83,7 +88,7 @@ class App extends React.Component {
     });
     console.log(this.state.cart);
   }
-
+  onRemoveFromCardHandler(id) {}
   onSearchHandler(text) {
     if (text.length !== 0 && text.trim() !== "") {
       this.setState({
@@ -121,7 +126,17 @@ class App extends React.Component {
             />
             <Route exact path="/FAQ" element={<FaqComponent />} />
             <Route exact path="/Contact" element={<ContactComponent />} />
-            <Route exact path="/Cart" element={<CartListComponent cart={this.state.cart} />} />
+            <Route
+              exact
+              path="/Cart"
+              element={
+                <CartListComponent
+                  cart={this.state.cart}
+                  subTotalPrice={this.state.subTotalPrice}
+                  AddToCart={this.onAddToCardHandler}
+                />
+              }
+            />
           </Routes>
         </HashRouter>
         {/* // OffCanvas // */}
