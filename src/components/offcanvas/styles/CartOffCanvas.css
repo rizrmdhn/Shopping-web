@@ -1,0 +1,82 @@
+#offCanvasCart {
+  background-color: white;
+  transition: transform 0.5s ease-in-out;
+}
+#offCanvasCart > .offcanvas-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#offCanvasCart > .offcanvas-header {
+  background-color: black;
+  height: 125px;
+}
+#offCanvasCartTitle {
+  font-size: 30px;
+  color: white;
+  background-color: black;
+  margin: auto;
+  margin-left: 100px;
+}
+#offCanvasCart > .offcanvas-header > .btn > .btn-close-offcanvas {
+  color: white;
+  transition: all 1s ease;
+}
+.offcanvas[aria-modal="true"]
+  > .offcanvas-header
+  > .btn
+  > .btn-close-offcanvas {
+  transform: rotate(180deg);
+}
+#offCanvasCart > .offcanvas-header > .btn > .btn-close-offcanvas:hover {
+  color: white;
+  transform: none;
+}
+#offCanvasCart > .offcanvas-body > .cart-list-item > .card {
+  width: 350px;
+  height: 125px !important;
+  margin: auto;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid black;
+  justify-content: flex-start;
+}
+#offCanvasCart
+  > .offcanvas-body
+  > .cart-list-item
+  > .card
+  > .row
+  > .col-md-4
+  > .cart-item-image {
+  width: 100px !important;
+  height: 110px;
+  object-fit: contain;
+  margin-left: 15px;
+}
+#offCanvasCart
+  > .offcanvas-body
+  > .cart-list-item
+  > .card
+  > .row
+  > .col-md-8
+  > .card-body
+  > .card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#offCanvasCart > .offcanvas-body > .row > .cart-order {
+  width: 350px;
+  height: 160px;
+  margin: auto;
+  margin-bottom: 0px;
+}
+#offCanvasCart > .offcanvas-body > .row > .cart-order > .Line-2 {
+  width: auto;
+}
+#offCanvasCart > .offcanvas-body > .row > .cart-order > .checkout-btn > a {
+  text-decoration: none;
+  color: white;
+  transition: 500ms;
+}

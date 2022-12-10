@@ -11,6 +11,7 @@ import CartListComponent from "./components/Body/CartListComponent";
 import FaqComponent from "./components/Body/FaqComponent";
 import ContactComponent from "./components/Body/ContactComponent";
 import CartOffCanvas from "./components/offcanvas/CartOffCanvas";
+import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -21,13 +22,13 @@ const Toast = MySwal.mixin({
   showConfirmButton: false,
   timer: 1500,
   timerProgressBar: true,
+  position: "bottom-end",
   showClass: {
     popup: "animate__animated animate__fadeInUp",
   },
   hideClass: {
     popup: "animate__animated animate__fadeOutDown",
   },
-  position: "bottom-right",
   didOpen: (toast) => {
     toast.addEventListener("mouseleave", Swal.resumeTimer);
   },
@@ -61,34 +62,46 @@ class App extends React.Component {
   onAddToCardHandler(list) {
     const newItem = list;
     const existingItem = this.state.cart.find((item) => item.id === newItem.id);
-
+    const totalPrice = newItem.price;
     if (existingItem) {
       existingItem.quantity++;
-      existingItem.totalPrice += newItem.price;
-      this.state.subTotalPrice += newItem.price;
+      existingItem.totalPrice += totalPrice;
+      this.state.subTotalPrice += totalPrice;
     } else {
       this.state.cart.push({
         id: newItem.id,
         title: newItem.title,
-        price: newItem.price,
+        price: totalPrice,
         category: newItem.category,
         description: newItem.description,
         image: newItem.image,
         quantity: 1,
-        totalPrice: newItem.price,
+        totalPrice: totalPrice,
       });
-      this.state.subTotalPrice += newItem.price;
+      this.state.subTotalPrice += totalPrice;
     }
     this.setState({
       quantity: (this.state.quantity += 1),
     });
-    Toast.fire({
-      icon: "success",
-      title: "Added to cart",
-    });
-    console.log(this.state.cart);
   }
-  onRemoveFromCardHandler(id) {}
+  onRemoveFromCardHandler(id) {
+    const existingItem = this.state.cart.find((item) => item.id === id);
+    console.log(existingItem);
+    if (existingItem.quantity === 1) {
+      this.state.cart = this.state.cart.filter((list) => list.id !== id);
+      this.setState({
+        quantity: (this.state.quantity -= 1),
+        subTotalPrice: (this.state.subTotalPrice -= existingItem.price),
+      });
+    } else {
+      existingItem.quantity--;
+      existingItem.totalPrice -= existingItem.price;
+      this.state.subTotalPrice -= existingItem.price;
+      this.setState({
+        quantity: (this.state.quantity -= 1),
+      });
+    }
+  }
   onSearchHandler(text) {
     if (text.length !== 0 && text.trim() !== "") {
       this.setState({
@@ -110,6 +123,7 @@ class App extends React.Component {
           <HeaderDesktop
             quantity={this.state.quantity}
             lists={this.state.searchList}
+            cart={this.state.cart}
             onSearch={this.onSearchHandler}
           />
 
@@ -140,7 +154,12 @@ class App extends React.Component {
           </Routes>
         </HashRouter>
         {/* // OffCanvas // */}
-        <CartOffCanvas />
+        <CartOffCanvas
+          cart={this.state.cart}
+          subTotalPrice={this.state.subTotalPrice}
+          AddToCart={this.onAddToCardHandler}
+          RemoveFromCart={this.onRemoveFromCardHandler}
+        />
         {/* // Modal Item // */}
         <DetailItemsComponent
           lists={this.state.lists}

@@ -29,6 +29,7 @@
   width: 100%;
   opacity: 0;
   transition: 500ms;
+  border-radius: 0px;
 }
 .card-footer > a:hover {
   color: rgb(223, 223, 223);
