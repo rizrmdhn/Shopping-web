@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/CartListComponent.css";
 
-function CartListComponent({ id, cart, subTotalPrice, AddToCart }) {
+function CartListComponent({
+  id,
+  cart,
+  subTotalPrice,
+  AddToCart,
+  RemoveFromCart,
+  RemoveAllFromCart,
+}) {
   return (
     <>
       {cart.length !== 0 ? (
@@ -46,6 +53,7 @@ function CartListComponent({ id, cart, subTotalPrice, AddToCart }) {
                                   fill="currentColor"
                                   className="remove bi bi-dash mb-1"
                                   viewBox="0 0 16 16"
+                                  onClick={() => RemoveFromCart(list.id)}
                                 >
                                   <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                                 </svg>
@@ -78,6 +86,7 @@ function CartListComponent({ id, cart, subTotalPrice, AddToCart }) {
                                   fill="currentColor"
                                   className="remove-from-cart bi bi-x-lg"
                                   viewBox="0 0 16 16"
+                                  onClick={() => RemoveAllFromCart(list.id)}
                                 >
                                   <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                                 </svg>

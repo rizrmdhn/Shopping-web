@@ -11,7 +11,6 @@ import CartListComponent from "./components/Body/CartListComponent";
 import FaqComponent from "./components/Body/FaqComponent";
 import ContactComponent from "./components/Body/ContactComponent";
 import CartOffCanvas from "./components/offcanvas/CartOffCanvas";
-import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -46,7 +45,9 @@ class App extends React.Component {
       showCart: false,
     };
     this.onAddToCardHandler = this.onAddToCardHandler.bind(this);
-    this.onRemoveFromCardHandler = this.onRemoveFromCardHandler.bind(this);
+    this.onRemoveFromCartHandler = this.onRemoveFromCartHandler.bind(this);
+    this.onRemoveAllFromCartHandler =
+      this.onRemoveAllFromCartHandler.bind(this);
     this.onSearchHandler = this.onSearchHandler.bind(this);
   }
 
@@ -84,9 +85,8 @@ class App extends React.Component {
       quantity: (this.state.quantity += 1),
     });
   }
-  onRemoveFromCardHandler(id) {
+  onRemoveFromCartHandler(id) {
     const existingItem = this.state.cart.find((item) => item.id === id);
-    console.log(existingItem);
     if (existingItem.quantity === 1) {
       this.state.cart = this.state.cart.filter((list) => list.id !== id);
       this.setState({
@@ -101,6 +101,13 @@ class App extends React.Component {
         quantity: (this.state.quantity -= 1),
       });
     }
+  }
+  onRemoveAllFromCartHandler(id) {
+    const cart = this.state.cart.filter((list) => list.id !== id);
+    this.setState({ cart });
+    this.setState({
+      quantity: 0,
+    });
   }
   onSearchHandler(text) {
     if (text.length !== 0 && text.trim() !== "") {
@@ -148,6 +155,8 @@ class App extends React.Component {
                   cart={this.state.cart}
                   subTotalPrice={this.state.subTotalPrice}
                   AddToCart={this.onAddToCardHandler}
+                  RemoveFromCart={this.onRemoveFromCartHandler}
+                  RemoveAllFromCart={this.onRemoveAllFromCartHandler}
                 />
               }
             />
@@ -158,7 +167,8 @@ class App extends React.Component {
           cart={this.state.cart}
           subTotalPrice={this.state.subTotalPrice}
           AddToCart={this.onAddToCardHandler}
-          RemoveFromCart={this.onRemoveFromCardHandler}
+          RemoveFromCart={this.onRemoveFromCartHandler}
+          RemoveAllFromCart={this.onRemoveAllFromCartHandler}
         />
         {/* // Modal Item // */}
         <DetailItemsComponent

@@ -1,7 +1,13 @@
 import React from "react";
 import "./styles/CartOffCanvas.css";
 
-function CartOffCanvas({ cart, subTotalPrice, AddToCart, RemoveFromCart }) {
+function CartOffCanvas({
+  cart,
+  subTotalPrice,
+  AddToCart,
+  RemoveFromCart,
+  RemoveAllFromCart,
+}) {
   return (
     <>
       <div
@@ -51,7 +57,26 @@ function CartOffCanvas({ cart, subTotalPrice, AddToCart, RemoveFromCart }) {
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h6 className="card-title text-muted">{list.title}</h6>
+                        <div className="card-header row">
+                          <div className="card-title col-10 mt-1">
+                            <h6 className="card-title-text text-muted">
+                              {list.title}
+                            </h6>
+                          </div>
+                          <div className="remove-from-cart col-1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              className="remove-from-cart bi bi-x-lg"
+                              viewBox="0 0 16 16"
+                              onClick={() => RemoveAllFromCart(list.id)}
+                            >
+                              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                            </svg>
+                          </div>
+                        </div>
                         <h5 className="card-text mb-3">$ {list.price}</h5>
                         <div className="cart-quantity">
                           <svg

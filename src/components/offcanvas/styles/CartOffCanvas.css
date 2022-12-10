@@ -41,6 +41,7 @@
   border-radius: 0px;
   border-bottom: 1px solid black;
   justify-content: flex-start;
+  cursor: auto;
 }
 #offCanvasCart
   > .offcanvas-body
@@ -61,10 +62,37 @@
   > .row
   > .col-md-8
   > .card-body
+  > .card-header {
+  padding: 0;
+  height: 35px;
+  border: none;
+  background-color: white;
+}
+#offCanvasCart
+  > .offcanvas-body
+  > .cart-list-item
+  > .card
+  > .row
+  > .col-md-8
+  > .card-body
+  > .card-header
   > .card-title {
+  background-color: white;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+#offCanvasCart
+  > .offcanvas-body
+  > .cart-list-item
+  > .card
+  > .row
+  > .col-md-8
+  > .card-body
+  > .card-header
+  > .remove-from-cart {
+  margin-left: auto;
+  cursor: pointer;
 }
 #offCanvasCart > .offcanvas-body > .row > .cart-order {
   width: 350px;
