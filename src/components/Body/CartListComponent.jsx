@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/CartListComponent.css";
-
+import { motion } from "framer-motion";
 function CartListComponent({
   id,
   cart,
@@ -11,7 +11,11 @@ function CartListComponent({
   RemoveAllFromCart,
 }) {
   return (
-    <>
+    <motion.div
+      initial={{ y: "100vh", transition: "0.5s" }}
+      animate={{ y: 0, transition: "0.5s" }}
+      exit={{ y: "100vh", transition: "0.5s" }}
+    >
       {cart.length !== 0 ? (
         <div className="cart-component-flex">
           <div className="cart-list">
@@ -145,7 +149,7 @@ function CartListComponent({
           </div>
         </div>
       )}
-    </>
+    </motion.div>
   );
 }
 

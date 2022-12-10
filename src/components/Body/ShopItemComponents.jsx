@@ -1,10 +1,16 @@
 import React from "react";
 import "./styles/ShopItemContainer.css";
 import ItemCard from "../Card/ItemCard";
+import { motion } from "framer-motion";
 
 function ShopItemComponents({ lists, AddToCart }) {
   return (
-    <div className="ShopItemContainer container-fluid m-auto">
+    <motion.div
+      initial={{ y: "100vh", transition: "0.5s" }}
+      animate={{ y: 0, transition: "0.5s" }}
+      exit={{ y: "100vh", transition: "0.5s" }}
+      className="ShopItemContainer container-fluid m-auto"
+    >
       {lists.map((list) => {
         return (
           <ItemCard
@@ -19,7 +25,7 @@ function ShopItemComponents({ lists, AddToCart }) {
           />
         );
       })}
-    </div>
+    </motion.div>
   );
 }
 

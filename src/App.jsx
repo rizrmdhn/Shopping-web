@@ -1,16 +1,13 @@
 import React from "react";
 import axios from "axios";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Routes } from "react-router-dom";
 import HeaderDesktop from "./components/Header/HeaderDesktop";
-import ShopItemComponents from "./components/Body/ShopItemComponents";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "animate.css";
 import DetailItemsComponent from "./components/Body/DetailItemsComponent";
-import CartListComponent from "./components/Body/CartListComponent";
-import FaqComponent from "./components/Body/FaqComponent";
-import ContactComponent from "./components/Body/ContactComponent";
 import CartOffCanvas from "./components/offcanvas/CartOffCanvas";
+import AnimatedRoutes from "./components/AnimatedRoutes";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -134,33 +131,14 @@ class App extends React.Component {
             onSearch={this.onSearchHandler}
           />
 
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <ShopItemComponents
-                  lists={this.state.lists}
-                  AddToCart={this.onAddToCardHandler}
-                />
-              }
-            />
-            <Route exact path="/FAQ" element={<FaqComponent />} />
-            <Route exact path="/Contact" element={<ContactComponent />} />
-            <Route
-              exact
-              path="/Cart"
-              element={
-                <CartListComponent
-                  cart={this.state.cart}
-                  subTotalPrice={this.state.subTotalPrice}
-                  AddToCart={this.onAddToCardHandler}
-                  RemoveFromCart={this.onRemoveFromCartHandler}
-                  RemoveAllFromCart={this.onRemoveAllFromCartHandler}
-                />
-              }
-            />
-          </Routes>
+          <AnimatedRoutes
+            lists={this.state.lists}
+            AddToCart={this.onAddToCardHandler}
+            cart={this.state.cart}
+            subTotalPrice={this.state.subTotalPrice}
+            RemoveFromCart={this.onRemoveFromCartHandler}
+            RemoveAllFromCart={this.onRemoveAllFromCartHandler}
+          />
         </HashRouter>
         {/* // OffCanvas // */}
         <CartOffCanvas
