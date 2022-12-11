@@ -1,0 +1,53 @@
+.contact-form {
+    width: 600px;
+    margin: auto;
+    margin-top: 80px;
+}
+.contact-form-header {
+    margin: 20px auto;
+}
+.contact-form-title {
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.contact-form-message {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.contact-form-contacts {
+    font-weight: 500;
+}
+.submit-btn {
+    background-color: black !important;
+    color: white m !important;
+    margin: auto;
+    margin-top: 25px;
+    margin-left: 72%;
+    width: 165px;
+    border-radius: 0px !important;
+    transition: 500ms ease-in-out !important;
+}
+.submit-btn:hover {
+    background-color: rgb(66, 66, 66) !important;
+    color: rgb(197, 197, 197) !important;
+}
+#firstName {
+    border: 1px solid black;
+    border-radius: 0px;
+}
+#lastName {
+    border: 1px solid black;
+    border-radius: 0px;
+}
+#email {
+    border: 1px solid black;
+    border-radius: 0px;
+}
+#phoneNumber {
+    border: 1px solid black;
+    border-radius: 0px;
+}
+#message {
+    border: 1px solid black;
+    border-radius: 0px;
+}
