@@ -86,7 +86,6 @@ class App extends React.Component {
     this.setState({
       quantity: (this.state.quantity += 1),
     });
-    console.log(this.state.cart, "<== cart state");
   }
   onRemoveFromCartHandler(id) {
     const existingItem = this.state.cart.find((item) => item.id === id);

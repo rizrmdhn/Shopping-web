@@ -67,8 +67,11 @@ function HeaderDesktop({ quantity, lists, cart, onSearch }) {
                       </svg>
                     </button>
                     <input
-                      className="input"
-                      placeholder="Type your text"
+                      className="input dropdown-toggle"
+                      onChange={onSearchbarChange}
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      placeholder="Search item"
                       required=""
                       type="text"
                     />
@@ -88,6 +91,7 @@ function HeaderDesktop({ quantity, lists, cart, onSearch }) {
                         ></path>
                       </svg>
                     </button>
+                    <DropDownMenu lists={lists} />
                   </form>
                   {/* <Input
                     onChange={onSearchbarChange}
@@ -97,7 +101,6 @@ function HeaderDesktop({ quantity, lists, cart, onSearch }) {
                     bsSize="sm"
                     type="text"
                   /> */}
-                  <DropDownMenu lists={lists} />
                 </NavItem>
                 <NavItem className="m-auto">
                   {cart.length !== 0 ? (
