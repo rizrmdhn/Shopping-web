@@ -8,6 +8,7 @@ import "animate.css";
 import DetailItemsComponent from "./components/Body/DetailItemsComponent";
 import CartOffCanvas from "./components/offcanvas/CartOffCanvas";
 import AnimatedRoutes from "./components/AnimatedRoutes";
+import LoadingComponent from "./components/Loading/LoadData/LoadingCardComponent";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -34,6 +35,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: true,
       lists: [],
       searchList: [],
       cart: [],
@@ -48,13 +50,16 @@ class App extends React.Component {
     this.onSearchHandler = this.onSearchHandler.bind(this);
   }
 
-  componentDidMount() {
-    axios.get(api).then((item) => {
-      this.setState({
-        lists: item.data,
-        searchList: item.data,
+  async componentDidMount() {
+    setTimeout(async () => {
+      await axios.get(api).then((item) => {
+        this.setState({
+          lists: item.data,
+          searchList: item.data,
+        });
       });
-    });
+    }, 3500);
+    this.state.isLoading = false;
   }
 
   onAddToCardHandler(list) {
@@ -132,6 +137,7 @@ class App extends React.Component {
           />
 
           <AnimatedRoutes
+            isLoading={this.state.isLoading}
             lists={this.state.lists}
             AddToCart={this.onAddToCardHandler}
             cart={this.state.cart}
@@ -139,20 +145,20 @@ class App extends React.Component {
             RemoveFromCart={this.onRemoveFromCartHandler}
             RemoveAllFromCart={this.onRemoveAllFromCartHandler}
           />
+          {/* // OffCanvas // */}
+          <CartOffCanvas
+            cart={this.state.cart}
+            subTotalPrice={this.state.subTotalPrice}
+            AddToCart={this.onAddToCardHandler}
+            RemoveFromCart={this.onRemoveFromCartHandler}
+            RemoveAllFromCart={this.onRemoveAllFromCartHandler}
+          />
+          {/* // Modal Item // */}
+          <DetailItemsComponent
+            lists={this.state.lists}
+            AddToCart={this.onAddToCardHandler}
+          />
         </HashRouter>
-        {/* // OffCanvas // */}
-        <CartOffCanvas
-          cart={this.state.cart}
-          subTotalPrice={this.state.subTotalPrice}
-          AddToCart={this.onAddToCardHandler}
-          RemoveFromCart={this.onRemoveFromCartHandler}
-          RemoveAllFromCart={this.onRemoveAllFromCartHandler}
-        />
-        {/* // Modal Item // */}
-        <DetailItemsComponent
-          lists={this.state.lists}
-          AddToCart={this.onAddToCardHandler}
-        />
       </div>
     );
   }

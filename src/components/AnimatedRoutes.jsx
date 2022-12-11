@@ -5,6 +5,7 @@ import FaqComponent from "./Body/FaqComponent";
 import ContactComponent from "./Body/ContactComponent";
 import ShopItemComponents from "./Body/ShopItemComponents";
 import { AnimatePresence } from "framer-motion";
+import LoadingShopItem from "./Loading/LoadingShopItem";
 
 function AnimatedRoutes({
   lists,
@@ -13,6 +14,7 @@ function AnimatedRoutes({
   subTotalPrice,
   RemoveFromCart,
   RemoveAllFromCart,
+  isLoading,
 }) {
   const location = useLocation();
   return (
@@ -21,7 +23,13 @@ function AnimatedRoutes({
         <Route
           exact
           path="/"
-          element={<ShopItemComponents lists={lists} AddToCart={AddToCart} />}
+          element={
+            <LoadingShopItem
+              lists={lists}
+              AddToCart={AddToCart}
+              isLoading={isLoading}
+            />
+          }
         />
         <Route exact path="/FAQ" element={<FaqComponent />} />
         <Route exact path="/Contact" element={<ContactComponent />} />

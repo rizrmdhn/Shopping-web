@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles/CartOffCanvas.css";
 
 function CartOffCanvas({
@@ -129,7 +130,7 @@ function CartOffCanvas({
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               >
-                <a href="#/Cart">View Cart</a>
+                <Link to="/Cart">View Cart</Link>
               </button>
             </div>
           </div>
