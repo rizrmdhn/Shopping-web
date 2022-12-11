@@ -7,9 +7,9 @@ import FaqBody2 from "../../views/FaqBody2";
 function FaqComponent() {
   return (
     <motion.div
-      initial={{ y: "100vh", transition: "0.5s" }}
+      initial={{ y: "100vw", transition: "0.5s" }}
       animate={{ y: 0, transition: "0.5s" }}
-      exit={{ y: "100vh", transition: "0.5s" }}
+      exit={{ y: "100vw", transition: "0.5s" }}
       className="faq-container container-fluid"
     >
       <div className="faq">

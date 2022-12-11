@@ -1,0 +1,23 @@
+.about-page {
+  margin: auto;
+  margin-top: 3vw !important;
+  display: flex;
+  margin: auto;
+  height: 25vw;
+  background-color: rgb(240, 240, 240);
+}
+.about-container {
+  margin: auto;
+  width: 750px;
+}
+.about-title {
+  color: black;
+  font-size: 35px;
+  font-weight: 700;
+}
+.about-description > p {
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+}

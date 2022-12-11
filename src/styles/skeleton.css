@@ -25,3 +25,10 @@
 .skeleton-footer {
   width: 30%;
 }
+
+.skeleton-price {
+  width: 65px;
+  height: 25px;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}

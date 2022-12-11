@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { HashRouter, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes } from "react-router-dom";
 import HeaderDesktop from "./components/Header/HeaderDesktop";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -9,6 +9,8 @@ import DetailItemsComponent from "./components/Body/DetailItemsComponent";
 import CartOffCanvas from "./components/offcanvas/CartOffCanvas";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import LoadingComponent from "./components/Loading/LoadData/LoadingCardComponent";
+import FooterComponent from "./components/Body/FooterComponent";
+import AboutPage from "./views/AboutPage";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -138,12 +140,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <HashRouter>
+        <BrowserRouter>
           <HeaderDesktop
             quantity={this.state.quantity}
             lists={this.state.searchList}
             cart={this.state.cart}
             onSearch={this.onSearchHandler}
+            isLoading={this.state.isLoading}
           />
 
           <AnimatedRoutes
@@ -151,14 +154,15 @@ class App extends React.Component {
             lists={this.state.lists}
             AddToCart={this.onAddToCardHandler}
             cart={this.state.cart}
-            subTotalPrice={this.state.subTotalPrice}
+            subTotalPrice={parseFloat(this.state.subTotalPrice.toFixed(2))}
             RemoveFromCart={this.onRemoveFromCartHandler}
             RemoveAllFromCart={this.onRemoveAllFromCartHandler}
           />
+          <FooterComponent />
           {/* // OffCanvas // */}
           <CartOffCanvas
             cart={this.state.cart}
-            subTotalPrice={this.state.subTotalPrice}
+            subTotalPrice={parseFloat(this.state.subTotalPrice.toFixed(2))}
             AddToCart={this.onAddToCardHandler}
             RemoveFromCart={this.onRemoveFromCartHandler}
             RemoveAllFromCart={this.onRemoveAllFromCartHandler}
@@ -168,7 +172,7 @@ class App extends React.Component {
             lists={this.state.lists}
             AddToCart={this.onAddToCardHandler}
           />
-        </HashRouter>
+        </BrowserRouter>
       </div>
     );
   }

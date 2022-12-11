@@ -38,7 +38,7 @@ function CartListComponent({
                       <div className="col-md-9">
                         <div className="card-body">
                           <div className="row mb-2">
-                            <div className=" col-5 m-auto">
+                            <div className=" col-4 m-auto">
                               <h5
                                 className="card-title cart-item-title"
                                 data-bs-toggle="tooltip"
@@ -78,8 +78,8 @@ function CartListComponent({
                                 </svg>
                               </div>
                             </div>
-                            <div className="col text-end m-auto me-3">
-                              <h5 className="cart-price">${list.totalPrice}</h5>
+                            <div className="col-3 text-center m-auto me-3">
+                              <h5 className="cart-price">${parseFloat((list.totalPrice).toFixed(2))}</h5>
                             </div>
                             <div className="col-sm-1 m-auto">
                               <h5 className="cart-exit">

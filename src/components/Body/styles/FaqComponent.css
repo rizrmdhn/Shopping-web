@@ -1,6 +1,9 @@
 .faq-container {
-  margin-top: 200px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 900px !important;
+  height: 40vw;
 }
 .faq-title {
   font-weight: 700;
@@ -70,5 +73,5 @@
   align-items: flex-start;
 }
 #headingOne {
- display: flex;
+  display: flex;
 }

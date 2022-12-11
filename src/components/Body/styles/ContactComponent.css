@@ -1,7 +1,8 @@
 .contact-form {
     width: 600px;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .contact-form-header {
     margin: 20px auto;

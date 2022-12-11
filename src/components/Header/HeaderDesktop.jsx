@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles/Header.css";
-import { Input, Nav, NavItem, NavLink } from "reactstrap";
-import { Link } from "react-router-dom";
-import DropDownMenu from "./DropDownMenu";
+import { Nav, NavItem } from "reactstrap";
+import { Link, NavLink } from "react-router-dom";
+import LoadingDropDownItem from "../Loading/LoadingDropDownItem";
 
-function HeaderDesktop({ quantity, lists, cart, onSearch }) {
+function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
   const onSearchbarChange = (event) => {
     onSearch(event.target.value);
   };
@@ -26,9 +26,7 @@ function HeaderDesktop({ quantity, lists, cart, onSearch }) {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link className="nav-link" href="About" to="/">
-                    About
-                  </Link>
+                  <a className="nav-link" href="/#about-page">About</a>
                 </NavItem>
                 <NavItem>
                   <Link className="nav-link" to="/FAQ">
@@ -91,7 +89,7 @@ function HeaderDesktop({ quantity, lists, cart, onSearch }) {
                         ></path>
                       </svg>
                     </button>
-                    <DropDownMenu lists={lists} />
+                    <LoadingDropDownItem lists={lists} isLoading={isLoading} />
                   </form>
                   {/* <Input
                     onChange={onSearchbarChange}

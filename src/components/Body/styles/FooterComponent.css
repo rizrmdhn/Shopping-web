@@ -1,0 +1,67 @@
+.footer-1 {
+  margin: auto;
+  background-color: black;
+}
+.footer-item-container {
+  margin: auto;
+  width: 750px;
+}
+.footer-item-1-col.col {
+  margin: auto;
+  margin-top: 50px;
+}
+.footer-item-1-col > p {
+  margin: 25px auto;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.footer-item-2-col.col {
+  margin: auto;
+  margin-top: 30px;
+}
+.footer-item-2-col > a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+.footer-item-2-col > a:hover {
+  color: white;
+}
+.footer-2 {
+  margin: auto;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(126, 126, 126);
+}
+.footer-2-title {
+  margin: auto;
+  padding: 5px;
+}
+.footer-item-3-col  {
+  margin: auto;
+  margin-bottom: 50px;
+}
+#footer-item-3-floatingInput {
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 2px solid red !important;
+}
+#footer-item-3-floatingInput:focus {
+  outline: none !important;
+}
+#footer-item-3-email {
+  color: white;
+}
+.btn.subscribe-btn {
+  color: black;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 0px;
+  transition: 500ms ease;
+}
+.btn.subscribe-btn:hover {
+  color: white;
+  background-color: blue;
+}
