@@ -1,0 +1,25 @@
+.loader > .card:hover  {
+  cursor: default;
+ }
+.loader > .card > .card-img-top  {
+ width: 100%;
+ margin-top: 0;
+}
+.loader > .card > .card-img-top:hover  {
+  transform: scale(1);
+}
+.loader > .card > .card-body > .card-title {
+  height: 15px;
+  margin: auto;
+}
+.loader > .card > .card-body > .item-border {
+  width: 75px;
+}
+.loader > .card > .card-body > .card-footer > .btn {
+  opacity: 1;
+  width: 285px;
+  height: 38px;
+}
+.loader > .card > .card-body > .card-footer > .btn:hover {
+  cursor: default;
+}
