@@ -3,7 +3,7 @@ import React from "react";
 function DropDownMenu({ lists }) {
   return (
     <>
-      <ul className="dropdown-menu">
+      <ul className="dropdown-menu animate__animated animate__fadeIn">
         {lists.map((list) => {
           return (
             <li key={list.id}>

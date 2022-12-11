@@ -86,6 +86,7 @@ class App extends React.Component {
     this.setState({
       quantity: (this.state.quantity += 1),
     });
+    console.log(this.state.cart, "<== cart state");
   }
   onRemoveFromCartHandler(id) {
     const existingItem = this.state.cart.find((item) => item.id === id);
@@ -105,11 +106,21 @@ class App extends React.Component {
     }
   }
   onRemoveAllFromCartHandler(id) {
-    const cart = this.state.cart.filter((list) => list.id !== id);
-    this.setState({ cart });
-    this.setState({
-      quantity: 0,
-    });
+    const existingItem = this.state.cart.find((item) => item.id === id);
+
+    if (existingItem.quantity >= 1) {
+      this.state.cart = this.state.cart.filter((list) => list.id !== id);
+      this.setState({
+        quantity: (this.state.quantity -= existingItem.quantity),
+        subTotalPrice: (this.state.subTotalPrice -= existingItem.totalPrice),
+      });
+    } else {
+      this.state.cart = this.state.cart.filter((list) => list.id !== id);
+      this.setState({
+        quantity: 0,
+        subTotalPrice: 0,
+      });
+    }
   }
   onSearchHandler(text) {
     if (text.length !== 0 && text.trim() !== "") {
