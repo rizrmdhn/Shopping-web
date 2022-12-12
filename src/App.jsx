@@ -15,23 +15,23 @@ import AboutPage from "./views/AboutPage";
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
 
-const Toast = MySwal.mixin({
-  toast: true,
-  position: "top-end",
-  showConfirmButton: false,
-  timer: 1500,
-  timerProgressBar: true,
-  position: "bottom-end",
-  showClass: {
-    popup: "animate__animated animate__fadeInUp",
-  },
-  hideClass: {
-    popup: "animate__animated animate__fadeOutDown",
-  },
-  didOpen: (toast) => {
-    toast.addEventListener("mouseleave", Swal.resumeTimer);
-  },
-});
+// const Toast = MySwal.mixin({
+//   toast: true,
+//   position: "top-end",
+//   showConfirmButton: false,
+//   timer: 1500,
+//   timerProgressBar: true,
+//   position: "bottom-end",
+//   showClass: {
+//     popup: "animate__animated animate__fadeInUp",
+//   },
+//   hideClass: {
+//     popup: "animate__animated animate__fadeOutDown",
+//   },
+//   didOpen: (toast) => {
+//     toast.addEventListener("mouseleave", Swal.resumeTimer);
+//   },
+// });
 
 class App extends React.Component {
   constructor(props) {

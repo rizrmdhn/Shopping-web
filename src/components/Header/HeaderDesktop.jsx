@@ -11,7 +11,7 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
   return (
     <>
       <div className="HeaderDesktop sticky-xxl-top container-fluid text-center">
-        <div className="row mt-3 p-2">
+        <div className="row p-2">
           <div className="col-2 m-auto">
             <div className="Header-1 Header-brand">
               <h1 className="Header-name">Shopping</h1>
