@@ -25,18 +25,28 @@ function ModalDetailItems({ lists, AddToCart }) {
             </div>
             <div className="modal-body">
               <div className="card mt-2">
-                <div className="row g-0">
-                  <div className="col-md-4">
+                <div className="row">
+                  <div className="col-4">
                     <img
                       src={lists.image}
                       className="modal-image"
                       alt={lists.title}
                     />
                   </div>
-                  <div className="col-md-8">
+                  <div className="col-8">
                     <div className="card-body m-auto">
-                      <h5 className="modal-card-title card-title">{lists.title}</h5>
-                      <p className="modal-card-text card-text">{lists.description}</p>
+                      <h5 className="modal-card-title card-title">
+                        {lists.title}
+                      </h5>
+                      <h6 className="modal-card-category">{lists.category}</h6>
+                      <div className="modal-card-line"></div>
+                      <div className="modal-card-description">
+                        <p className="modal-card-text card-text">
+                          {lists.description}
+                        </p>
+                      </div>
+                      <div className="modal-card-line"></div>
+                      <h4 className="modal-card-price">$ {lists.price}</h4>
                     </div>
                   </div>
                 </div>
@@ -45,12 +55,17 @@ function ModalDetailItems({ lists, AddToCart }) {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="modal-close-button btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary" onClick={() => AddToCart(lists)}>
+              <button
+                type="button"
+                className="modal-add2card-button btn btn-primary"
+                data-bs-dismiss="modal"
+                onClick={() => AddToCart(lists)}
+              >
                 Add To Cart
               </button>
             </div>
