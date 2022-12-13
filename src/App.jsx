@@ -167,6 +167,10 @@ class App extends React.Component {
         ),
       });
       return defaultValue;
+    } else {
+      this.setState({
+        lists: this.state.unFilteredLists,
+      });
     }
   }
   render() {
