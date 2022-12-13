@@ -183,20 +183,25 @@ input:not(:placeholder-shown) ~ .reset {
   .HeaderDesktop {
     display: none;
   }
+  .HeaderMobile > .row.p-2 {
+    width: 100%;
+  }
   .Header-1.col-2 {
     width: 50%;
   }
   .Header-3.col-2 {
-    width: 50%;
+    width: 50% !important;
+    margin: auto;
   }
   .HeaderMobile {
     display: inline;
   }
   .header-3-item {
     margin: auto;
+    margin-right: 0px;
   }
   .badge {
-    right: 180px;
+    right: 218px;
   }
   .mobile-menu-btn {
     margin-right: 0px;

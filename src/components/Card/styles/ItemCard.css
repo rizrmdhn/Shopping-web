@@ -54,7 +54,7 @@
 }
 @media screen and (max-width: 1300px) {
   .ShopItemContainer > .card {
-    width: 250px;
+    width: 225px;
   }
   .ShopItemContainer > .card > .card-body > .card-title {
     font-size: 15px;

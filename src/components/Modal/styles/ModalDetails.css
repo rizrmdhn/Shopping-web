@@ -59,3 +59,21 @@
   color: rgb(218, 218, 218) !important;
   background-color: rgb(121, 121, 121) !important;
 }
+@media screen and (max-width: 900px) {
+  .modal-body > .card {
+    width: 650px;
+    border: none !important;
+    margin: auto;
+  }
+  .modal-image {
+    margin: auto;
+    width: 225px;
+    height: 350px;
+    object-fit: contain;
+  }
+  .modal-dialog {
+    max-width: 750px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
