@@ -13,6 +13,7 @@ import FooterComponent from "./components/Body/FooterComponent";
 import AboutPage from "./views/AboutPage";
 import HeaderMobile from "./components/Header/HeaderMobile";
 import MenuOffCanvas from "./components/offcanvas/MenuOffCanvas";
+import MobileSearchBar from "./components/Body/MobileSearchBar";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -41,6 +42,7 @@ class App extends React.Component {
     this.state = {
       isLoading: true,
       lists: [],
+      unFilteredLists: [],
       searchList: [],
       cart: [],
       quantity: 0,
@@ -52,6 +54,8 @@ class App extends React.Component {
     this.onRemoveAllFromCartHandler =
       this.onRemoveAllFromCartHandler.bind(this);
     this.onSearchHandler = this.onSearchHandler.bind(this);
+    this.onSearchHandlerMobile = this.onSearchHandlerMobile.bind(this);
+    this.onSearchTypeHandler = this.onSearchTypeHandler.bind(this);
   }
 
   async componentDidMount() {
@@ -59,6 +63,7 @@ class App extends React.Component {
       await axios.get(api).then((item) => {
         this.setState({
           lists: item.data,
+          unFilteredLists: item.data,
           searchList: item.data,
         });
       });
@@ -139,6 +144,31 @@ class App extends React.Component {
     }
   }
 
+  onSearchHandlerMobile(text) {
+    if (text.length !== 0 && text.trim() !== "") {
+      this.setState({
+        lists: this.state.lists.filter((lists) =>
+          lists.title.toLowerCase().includes(text.toLowerCase())
+        ),
+      });
+    } else {
+      this.setState({
+        lists: this.state.unFilteredLists,
+      });
+    }
+  }
+
+  onSearchTypeHandler(text) {
+    const defaultValue = (this.state.lists = this.state.unFilteredLists);
+    if (text !== "Choose product type...") {
+      this.setState({
+        lists: this.state.lists.filter(
+          (lists) => lists.category.toLowerCase() === text.toLowerCase()
+        ),
+      });
+      return defaultValue;
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -150,7 +180,11 @@ class App extends React.Component {
             onSearch={this.onSearchHandler}
             isLoading={this.state.isLoading}
           />
-          <HeaderMobile quantity={this.state.quantity}/>
+          <HeaderMobile quantity={this.state.quantity} />
+          <MobileSearchBar
+            onSearch={this.onSearchHandlerMobile}
+            onSearchType={this.onSearchTypeHandler}
+          />
           <AnimatedRoutes
             isLoading={this.state.isLoading}
             lists={this.state.lists}

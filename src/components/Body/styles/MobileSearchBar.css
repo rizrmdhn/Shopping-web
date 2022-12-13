@@ -1,0 +1,22 @@
+.mobile-search-bar {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .mobile-search-bar {
+    width: 100%;
+    margin: auto;
+    display: inline;
+  }
+  .mobile-search-nav {
+    margin: auto;
+  }
+  .mobile-search-nav-item {
+    margin: auto;
+  }
+  .mobile-search-input {
+    width: 450px;
+  }
+  .form-price {
+    width: 250px;
+  }
+}
