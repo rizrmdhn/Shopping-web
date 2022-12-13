@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/Header.css";
 import { Nav, NavItem } from "reactstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoadingDropDownItem from "../Loading/LoadingDropDownItem";
 
 function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
@@ -12,12 +12,12 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
     <>
       <div className="HeaderDesktop sticky-xxl-top container-fluid text-center">
         <div className="row p-2">
-          <div className="col-2 m-auto">
+          <div className="Header-1 col-2">
             <div className="Header-1 Header-brand">
               <h1 className="Header-name">Shopping</h1>
             </div>
           </div>
-          <div className="col-5 m-auto">
+          <div className="Header-2 col-6">
             <div className="Header-2 menu">
               <Nav>
                 <NavItem>
@@ -41,11 +41,11 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
               </Nav>
             </div>
           </div>
-          <div className="col-2 m-auto">
+          <div className="Header-3 col-2">
             <div className="Header-3">
-              <Nav>
-                <NavItem className="m-auto">
-                  <form className="form">
+              <Nav className="header-3-nav">
+                <NavItem className="nav-item-responsive">
+                  <form className="Header-3-form form">
                     <button>
                       <svg
                         width="17"
@@ -65,7 +65,7 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
                       </svg>
                     </button>
                     <input
-                      className="input dropdown-toggle"
+                      className="search-input input dropdown-toggle"
                       onChange={onSearchbarChange}
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
@@ -91,19 +91,11 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
                     </button>
                     <LoadingDropDownItem lists={lists} isLoading={isLoading} />
                   </form>
-                  {/* <Input
-                    onChange={onSearchbarChange}
-                    className="dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    bsSize="sm"
-                    type="text"
-                  /> */}
                 </NavItem>
-                <NavItem className="m-auto">
+                <NavItem className="">
                   {cart.length !== 0 ? (
                     <Link className="nav-link">
-                      <span className="position-absolute translate-middle badge rounded-pill bg-danger">
+                      <span className="responsive-quantity-icon position-absolute translate-middle badge rounded-pill bg-danger">
                         {quantity}
                       </span>
                       <svg
@@ -111,7 +103,7 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
                         width="32"
                         height="32"
                         fill="currentColor"
-                        className="bi bi-cart-fill"
+                        className="cart-icon bi bi-cart-fill"
                         viewBox="0 0 16 16"
                         data-bs-toggle="offcanvas"
                         data-bs-target="#offCanvasCart"
@@ -130,7 +122,7 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
                         width="32"
                         height="32"
                         fill="currentColor"
-                        className="bi bi-cart-fill"
+                        className="cart-icon bi bi-cart-fill"
                         viewBox="0 0 16 16"
                       >
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />

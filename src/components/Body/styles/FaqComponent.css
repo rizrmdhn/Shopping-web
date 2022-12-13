@@ -75,3 +75,10 @@
 #headingOne {
   display: flex;
 }
+@media screen and (max-width: 900px) {
+  .faq-container {
+    width: 800px !important;
+    margin: auto;
+    height: 75vw;
+  }
+}

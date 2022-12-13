@@ -2,7 +2,6 @@ import React from "react";
 import "./styles/ItemCard.css";
 import ItemBody from "../../views/ItemBody";
 import ItemImage from "../../views/ItemImage";
-import LoadingCardComponent from "../Loading/LoadData/LoadingCardComponent";
 
 function ItemCard({
   id,

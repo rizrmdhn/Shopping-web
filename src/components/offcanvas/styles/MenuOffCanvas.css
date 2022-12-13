@@ -1,0 +1,19 @@
+#offCanvasMenu {
+  background-color: white;
+  transition: transform 0.5s ease-in-out;
+}
+#offCanvasMenu > .offcanvas-header {
+  background-color: black;
+  height: 125px;
+}
+.mobile-nav {
+    display: block !important;
+}
+.mobile-nav > .nav-item {
+    margin: 25px auto;
+}
+.mobile-nav > .nav-item > a{
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
+}

@@ -1,9 +1,6 @@
 .about-page {
-  margin: auto;
-  margin-top: 3vw !important;
   display: flex;
-  margin: auto;
-  height: 25vw;
+  height: 425px;
   background-color: rgb(240, 240, 240);
 }
 .about-container {

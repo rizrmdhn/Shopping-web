@@ -5,7 +5,7 @@ function ItemImage({ id, image, alt }) {
     <>
       <img
         src={image}
-        className="card-img-top"
+        className="card-image card-img-top"
         alt={alt}
         data-bs-toggle="modal"
         data-bs-target={`#desc${id}`}

@@ -13,7 +13,7 @@ function CartListComponent({
   return (
     <motion.div
       initial={{ y: "100vh", transition: "0.5s" }}
-      animate={{ y: 0, transition: "0.5s" }}
+      animate={{ y: "0vh", transition: "0.5s" }}
       exit={{ y: "100vh", transition: "0.5s" }}
     >
       {cart.length !== 0 ? (

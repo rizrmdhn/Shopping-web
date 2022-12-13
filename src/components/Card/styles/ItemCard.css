@@ -1,16 +1,17 @@
-.card {
+.ShopItemContainer > .card {
   width: 350px;
   height: 350px !important;
   margin: 20px 25px;
   cursor: pointer;
+  border: none !important;
 }
-.card:hover > .card-body > .card-footer > a {
+.ShopItemContainer > .card:hover > .card-body > .card-footer > a {
   opacity: 100;
 }
-.card:hover > .card-body > .item-border {
+.ShopItemContainer > .card:hover > .card-body > .item-border {
   width: 200px;
 }
-.card > .card-img-top {
+.ShopItemContainer > .card > .card-img-top {
   margin: 15px auto;
   overflow: hidden;
   width: 200px;
@@ -18,7 +19,7 @@
   object-fit: contain;
   transition: transform 0.5s ease;
 }
-.card > .card-img-top:hover {
+.ShopItemContainer > .card > .card-img-top:hover {
   transform: scale(1.5);
 }
 
@@ -51,3 +52,22 @@
   background-color: black;
   transition: 500ms ease;
 }
+@media screen and (max-width: 1300px) {
+  .ShopItemContainer > .card {
+    width: 250px;
+  }
+  .ShopItemContainer > .card > .card-body > .card-title {
+    font-size: 15px;
+    height: 25px;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+  }
+  .ShopItemContainer > .card > .card-body > .card-text > .item-price {
+    font-size: 20px;
+  }
+  .ShopItemContainer > .card > .card-body > .card-footer > a {
+    margin: auto;
+    opacity: 100;
+  }
+}
+

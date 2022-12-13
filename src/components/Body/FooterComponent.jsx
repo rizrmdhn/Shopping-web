@@ -62,7 +62,7 @@ function FooterComponent() {
           </div>
         </div>
       </div>
-      <div className="footer-2 container-fluid text-lg-center">
+      <div className="footer-2 container-fluid text-center">
         <p className="footer-2-title">© this is footer</p>
       </div>
     </>

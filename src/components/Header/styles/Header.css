@@ -1,10 +1,22 @@
 .HeaderDesktop {
   background-color: white;
 }
-.Header-1 > .Header-name {
+.HeaderMobile {
+  display: none;
+}
+.Header-1 {
+  margin: auto 45px;
+}
+.Header-1 > .Header-name > a {
   font-size: 30px;
   color: black;
   text-decoration: none;
+}
+.Header-2 {
+  margin: auto 50px;
+}
+.Header-3 {
+  margin: auto;
 }
 .menu > .nav {
   font-size: 20px;
@@ -32,6 +44,9 @@
 }
 .badge {
   right: 105px;
+}
+.cart-icon {
+  margin: auto;
 }
 .dropdown-menu {
   width: 200px;
@@ -140,4 +155,50 @@ input:not(:placeholder-shown) ~ .reset {
 .form svg {
   width: 17px;
   margin-top: 3px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1300px) {
+  .Header-1 {
+    margin: auto;
+  }
+  .Header-2 {
+    margin: auto;
+  }
+  .Header-3 {
+    margin: auto;
+    width: 240px !important;
+  }
+  .Header-3-form {
+    padding: 0px;
+  }
+  .header-3-nav > .nav-item > .nav-link {
+    padding: 0px;
+  }
+  .badge {
+    right: 15px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .HeaderDesktop {
+    display: none;
+  }
+  .Header-1.col-2 {
+    width: 50%;
+  }
+  .Header-3.col-2 {
+    width: 50%;
+  }
+  .HeaderMobile {
+    display: inline;
+  }
+  .header-3-item {
+    margin: auto;
+  }
+  .badge {
+    right: 180px;
+  }
+  .mobile-menu-btn {
+    margin-right: 0px;
+  }
 }

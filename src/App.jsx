@@ -11,6 +11,8 @@ import AnimatedRoutes from "./components/AnimatedRoutes";
 import LoadingComponent from "./components/Loading/LoadData/LoadingCardComponent";
 import FooterComponent from "./components/Body/FooterComponent";
 import AboutPage from "./views/AboutPage";
+import HeaderMobile from "./components/Header/HeaderMobile";
+import MenuOffCanvas from "./components/offcanvas/MenuOffCanvas";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -60,7 +62,7 @@ class App extends React.Component {
           searchList: item.data,
         });
       });
-    }, 3500);
+    }, 2000);
     this.state.isLoading = false;
   }
 
@@ -148,7 +150,7 @@ class App extends React.Component {
             onSearch={this.onSearchHandler}
             isLoading={this.state.isLoading}
           />
-
+          <HeaderMobile quantity={this.state.quantity}/>
           <AnimatedRoutes
             isLoading={this.state.isLoading}
             lists={this.state.lists}
@@ -160,6 +162,7 @@ class App extends React.Component {
           />
           <FooterComponent />
           {/* // OffCanvas // */}
+          <MenuOffCanvas />
           <CartOffCanvas
             cart={this.state.cart}
             subTotalPrice={parseFloat(this.state.subTotalPrice.toFixed(2))}
