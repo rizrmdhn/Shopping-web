@@ -22,7 +22,7 @@ function MobileSearchBar({ onSearch, onSearchType }) {
           />
         </NavItem>
         <NavItem className="mobile-search-nav-item">
-          <div className="form-price input-group mb-3">
+          <div className="form-price input-group">
             <label className="input-group-text" htmlFor="inputGroupPrice">
               Options
             </label>

@@ -15,8 +15,11 @@
   }
   .mobile-search-input {
     width: 450px;
+    height: 45px;
   }
   .form-price {
+    margin: auto;
     width: 250px;
+    height: 45px;
   }
 }

@@ -71,3 +71,8 @@
   }
 }
 
+@media screen and (max-width: 750px) {
+  .ShopItemContainer > .card {
+    width: 200px;
+  }
+}

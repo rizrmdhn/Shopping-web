@@ -38,7 +38,7 @@
   margin: auto;
   padding: 5px;
 }
-.footer-item-3-col  {
+.footer-item-3-col {
   margin: auto;
   margin-bottom: 50px;
 }
@@ -64,4 +64,30 @@
 .btn.subscribe-btn:hover {
   color: white;
   background-color: blue;
+}
+
+@media screen and (max-width: 750px) {
+  .footer-item-1.row.g-2.text-start {
+    margin: auto;
+    width: 550px;
+  }
+  .footer-item-2 {
+    margin: 15px 105px;
+    width: 550px;
+  }
+  .footer-form {
+    margin: 15px 95px;
+    width: 750px;
+  }
+  .footer-item-3.row.g-2 {
+    margin: auto;
+  }
+  .email-updates.col-md-8 {
+    margin: auto;
+    width: 50%;
+  }
+  .subs-col.col {
+    margin: auto;
+    width: 40%;
+  }
 }

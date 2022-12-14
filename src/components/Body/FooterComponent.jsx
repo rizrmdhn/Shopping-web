@@ -24,18 +24,18 @@ function FooterComponent() {
               <p>Pinterest</p>
             </div>
           </div>
-          <div className="footer-item-2 row ">
-            <div className="footer-item-2-col col">
+          <div className="footer-item-2">
+            <div className="footer-item-2-col">
               <Link to="/Contact" className="contact-use">
                 Join our mailing list and never miss an update
               </Link>
             </div>
           </div>
-          <div className="footer-item-3 row g-2 m-auto mt-2">
-            <div className="footer-item-3-col col-12 mb-4">
-              <form>
-                <div className="row">
-                  <div className="col-md-8">
+          <div className="footer-item-3 row g-2">
+            <div className="footer-item-3-col col mb-4">
+              <form className="footer-form">
+                <div className="footer-form-row row">
+                  <div className="email-updates col-md-8">
                     {" "}
                     <div className="form-floating mb-3">
                       <input
@@ -53,7 +53,7 @@ function FooterComponent() {
                       </label>
                     </div>
                   </div>
-                  <div className="col m-auto">
+                  <div className="subs-col col">
                     <button className="btn subscribe-btn">Subscribe Now</button>
                   </div>
                 </div>

@@ -82,3 +82,10 @@
     height: 75vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .faq-container {
+    width: 650px !important;
+    margin: auto;
+    height: 85vw;
+  }
+}
