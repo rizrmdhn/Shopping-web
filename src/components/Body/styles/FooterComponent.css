@@ -3,12 +3,11 @@
   background-color: black;
 }
 .footer-item-container {
-  margin: auto;
   width: 750px;
+  margin: auto;
 }
 .footer-item-1-col.col {
-  margin: auto;
-  margin-top: 50px;
+  margin: 50px 225px auto;
 }
 .footer-item-1-col > p {
   margin: 25px auto;
@@ -16,9 +15,8 @@
   cursor: pointer;
   font-weight: 600;
 }
-.footer-item-2-col.col {
-  margin: auto;
-  margin-top: 30px;
+.footer-item-2-col {
+  margin: 30px 225px auto;
 }
 .footer-item-2-col > a {
   color: white;
@@ -39,8 +37,7 @@
   padding: 5px;
 }
 .footer-item-3-col {
-  margin: auto;
-  margin-bottom: 50px;
+  margin: 50px 225px auto;
 }
 #footer-item-3-floatingInput {
   border: none;
@@ -66,11 +63,41 @@
   color: white;
   background-color: blue;
 }
-
+@media screen and (max-width: 1300px) {
+  .footer-item-1-col.col {
+    margin: 25px 130px;
+  }
+  .footer-item-2-col {
+    margin: auto 130px;
+  }
+  .footer-item-3-col {
+    margin: auto 130px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .footer-item-1-col.col {
+    margin: 25px 50px;
+  }
+  .footer-item-2-col {
+    margin: auto 50px;
+  }
+  .footer-item-3-col {
+    margin: auto 50px;
+  }
+}
 @media screen and (max-width: 750px) {
   .footer-item-1.row.g-2.text-start {
     margin: auto;
     width: 550px;
+  }
+  .footer-item-1-col.col {
+    margin: auto;
+  }
+  .footer-item-2-col {
+    margin: auto;
+  }
+  .footer-item-3-col {
+    margin: auto;
   }
   .footer-item-2 {
     margin: 15px 105px;
