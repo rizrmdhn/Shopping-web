@@ -112,9 +112,6 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
                     <Link className="nav-link" to="/Cart">
                       <i
                         className="cart-icon bi bi-cart-fill"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#offCanvasCart"
-                        aria-controls="offCanvasCart"
                       >
                         <span className="badge rounded-pill bg-danger">
                           {quantity}
