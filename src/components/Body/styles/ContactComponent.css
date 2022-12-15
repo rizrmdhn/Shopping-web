@@ -58,3 +58,15 @@
     margin: 50px 25px;
   }
 }
+@media screen and (max-width: 450px) {
+  .submit-btn {
+    background-color: black !important;
+    color: white m !important;
+    margin: auto;
+    margin-top: 25px;
+    margin-left: 53%;
+    width: 165px;
+    border-radius: 0px !important;
+    transition: 500ms ease-in-out !important;
+  }
+}

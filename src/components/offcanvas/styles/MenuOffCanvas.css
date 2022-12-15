@@ -34,3 +34,11 @@
   border: none;
   background-color: transparent;
 }
+@media screen and (max-width: 450px) {
+  #offCanvasMenu {
+    width: auto;
+  }
+  #offCanvasCartTitle {
+    margin: auto 25px;
+  }
+}

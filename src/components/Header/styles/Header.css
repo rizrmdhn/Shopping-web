@@ -212,3 +212,25 @@ input:not(:placeholder-shown) ~ .reset {
     right: 175px;
   }
 }
+@media screen and (max-width: 450px) {
+  .HeaderMobile > .row.p-2 {
+    margin: auto;
+    width: 400px;
+  }
+  .Header-1.col-2 {
+    width: auto;
+  }
+  .Header-3 {
+    width: auto !important;
+  }
+  .header-3-item {
+    margin: auto;
+    margin-right: 0px;
+  }
+  .header-3-item.item-1 {
+    margin-right: 0px;
+  }
+  .badge {
+    right: 130px;
+  }
+}

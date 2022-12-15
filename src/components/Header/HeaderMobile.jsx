@@ -18,7 +18,7 @@ function HeaderMobile({ quantity }) {
           <div className="Header-3 col-2">
             <div className="Header-3">
               <Nav className="header-3-nav">
-                <NavItem className="header-3-item">
+                <NavItem className="header-3-item item-1">
                   <Link className="nav-link" to="/Cart">
                     <span className="position-absolute translate-middle badge rounded-pill bg-danger">
                       {quantity}

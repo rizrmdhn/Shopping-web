@@ -117,3 +117,28 @@
     width: 30%;
   }
 }
+@media screen and (max-width: 450px) {
+  .footer-item-1.row.g-2.text-start {
+    margin: auto;
+    width: auto;
+  }
+  .footer-item-2 {
+    margin: 15px auto;
+    width: auto;
+  }
+  .footer-form {
+    margin: 15px auto;
+    width: auto;
+  }
+  .footer-item-3.row.g-2 {
+    margin: auto;
+  }
+  .email-updates.col-md-8 {
+    margin: auto;
+    width: 50%;
+  }
+  .subs-col.col {
+    margin: auto;
+    width: 30%;
+  }
+}

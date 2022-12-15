@@ -23,3 +23,12 @@
     margin: auto 25px;
   }
 }
+@media screen and (max-width: 450px) {
+  .about-page {
+    width: auto;
+    height: auto;
+  }
+  .about-container {
+    margin: auto 25px;
+  }
+}
