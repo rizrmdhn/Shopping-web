@@ -23,3 +23,20 @@
     height: 45px;
   }
 }
+@media screen and (max-width: 750px) {
+  .mobile-search-nav {
+    margin: auto;
+  }
+  .mobile-search-nav-item {
+    margin: auto;
+  }
+  .mobile-search-input {
+    width: 250px;
+    height: 45px;
+  }
+  .form-price {
+    margin: auto;
+    width: 250px;
+    height: 45px;
+  }
+}

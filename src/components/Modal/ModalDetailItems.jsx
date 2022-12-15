@@ -34,7 +34,7 @@ function ModalDetailItems({ lists, AddToCart }) {
                     />
                   </div>
                   <div className="col-8">
-                    <div className="card-body m-auto">
+                    <div className="card-body">
                       <h5 className="modal-card-title card-title">
                         {lists.title}
                       </h5>

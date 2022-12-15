@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { BrowserRouter, HashRouter, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import HeaderDesktop from "./components/Header/HeaderDesktop";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -8,12 +8,9 @@ import "animate.css";
 import DetailItemsComponent from "./components/Body/DetailItemsComponent";
 import CartOffCanvas from "./components/offcanvas/CartOffCanvas";
 import AnimatedRoutes from "./components/AnimatedRoutes";
-import LoadingComponent from "./components/Loading/LoadData/LoadingCardComponent";
 import FooterComponent from "./components/Body/FooterComponent";
-import AboutPage from "./views/AboutPage";
 import HeaderMobile from "./components/Header/HeaderMobile";
 import MenuOffCanvas from "./components/offcanvas/MenuOffCanvas";
-import MobileSearchBar from "./components/Body/MobileSearchBar";
 
 const MySwal = withReactContent(Swal);
 const api = "https://fakestoreapi.com/products";
@@ -185,10 +182,7 @@ class App extends React.Component {
             isLoading={this.state.isLoading}
           />
           <HeaderMobile quantity={this.state.quantity} />
-          <MobileSearchBar
-            onSearch={this.onSearchHandlerMobile}
-            onSearchType={this.onSearchTypeHandler}
-          />
+
           <AnimatedRoutes
             isLoading={this.state.isLoading}
             lists={this.state.lists}
@@ -197,6 +191,8 @@ class App extends React.Component {
             subTotalPrice={parseFloat(this.state.subTotalPrice.toFixed(2))}
             RemoveFromCart={this.onRemoveFromCartHandler}
             RemoveAllFromCart={this.onRemoveAllFromCartHandler}
+            onSearch={this.onSearchHandler}
+            onSearchType={this.onSearchTypeHandler}
           />
           <FooterComponent />
           {/* // OffCanvas // */}

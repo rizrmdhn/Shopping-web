@@ -7,13 +7,30 @@
   height: 125px;
 }
 .mobile-nav {
-    display: block !important;
+  display: block !important;
 }
 .mobile-nav > .nav-item {
-    margin: 25px auto;
+  margin: 25px auto;
 }
-.mobile-nav > .nav-item > a{
-    font-size: 25px;
-    font-weight: 600;
-    color: black;
+.mobile-nav > .nav-item > .about-btn {
+  font-size: 25px;
+  font-weight: 600;
+  color: black;
+  border: none;
+  background-color: transparent;
+}
+.mobile-nav > .nav-item > .about-btn > a {
+  font-size: 25px;
+  font-weight: 600;
+  color: black;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+}
+.mobile-nav > .nav-item > .nav-link > button {
+  font-size: 25px;
+  font-weight: 600;
+  color: black;
+  border: none;
+  background-color: transparent;
 }

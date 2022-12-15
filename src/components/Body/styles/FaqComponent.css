@@ -13,6 +13,7 @@
   display: flex;
 }
 .faq-1 {
+  background-color: transparent;
   border: none;
   margin: auto 0px;
   margin-top: 25px;
@@ -21,6 +22,7 @@
   transition: 300ms;
 }
 .faq-2 {
+  background-color: transparent;
   border: none;
   margin: auto;
   margin-top: 25px;

@@ -42,22 +42,45 @@ function MenuOffCanvas() {
           <Nav className="mobile-nav">
             <NavItem>
               <Link className="nav-link" to="/">
-                Shop
+                <button
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offCanvasMenu"
+                  aria-controls="offCanvasMenu"
+                >
+                  Shop
+                </button>
               </Link>
             </NavItem>
             <NavItem>
-              <a className="nav-link" href="/#about-page">
-                About
-              </a>
+              <button
+                className="about-btn nav-link"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offCanvasMenu"
+                aria-controls="offCanvasMenu"
+              >
+                <a href="/#about-page">About</a>
+              </button>
             </NavItem>
             <NavItem>
               <Link className="nav-link" to="/FAQ">
-                FAQ
+                <button
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offCanvasMenu"
+                  aria-controls="offCanvasMenu"
+                >
+                  FAQ
+                </button>
               </Link>
             </NavItem>
             <NavItem>
               <Link className="nav-link" to="/Contact">
-                Contact
+                <button
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offCanvasMenu"
+                  aria-controls="offCanvasMenu"
+                >
+                  Contact
+                </button>
               </Link>
             </NavItem>
           </Nav>

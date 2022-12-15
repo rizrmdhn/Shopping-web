@@ -1,6 +1,9 @@
 .modal-title {
   font-weight: bold;
 }
+.modal-dialog {
+  max-width: 850px !important;
+}
 .modal-body > .card {
   width: 750px;
   border: none !important;
@@ -75,5 +78,53 @@
     max-width: 750px !important;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+@media screen and (max-width: 750px) {
+  .modal-body > .card {
+    width: 350px;
+    border: none !important;
+    margin: auto;
+  }
+  .modal-image {
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+  }
+  .modal-body > .card > .row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .modal-body > .card > .row > .col-8 > .card-body {
+    width: 350px !important;
+  }
+  .modal-body > .card > .row > .col-4 {
+    margin: auto;
+  }
+  .modal-image {
+    margin: auto;
+    width: 125px;
+    height: 250px;
+    object-fit: contain;
+  }
+  .modal-dialog {
+    max-width: 450px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .modal-close-button {
+    background-color: black !important;
+    color: white !important;
+    width: 20%;
+    border-radius: 0px !important;
+    transition: 500ms ease !important;
+  }
+  .modal-add2card-button {
+    width: 30%;
+    background-color: black !important;
+    border-radius: 0px !important;
+    transition: 500ms ease !important;
   }
 }

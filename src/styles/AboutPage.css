@@ -18,3 +18,8 @@
   font-size: 25px;
   font-weight: 500;
 }
+@media screen and (max-width: 750px) {
+  .about-container {
+    margin: auto 25px;
+  }
+}

@@ -15,6 +15,8 @@ function AnimatedRoutes({
   RemoveFromCart,
   RemoveAllFromCart,
   isLoading,
+  onSearch,
+  onSearchType,
 }) {
   const location = useLocation();
   return (
@@ -28,6 +30,8 @@ function AnimatedRoutes({
               lists={lists}
               AddToCart={AddToCart}
               isLoading={isLoading}
+              onSearch={onSearch}
+              onSearchType={onSearchType}
             />
           }
         />

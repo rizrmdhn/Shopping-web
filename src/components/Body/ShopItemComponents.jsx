@@ -3,8 +3,9 @@ import "./styles/ShopItemContainer.css";
 import ItemCard from "../Card/ItemCard";
 import { motion } from "framer-motion";
 import AboutPage from "../../views/AboutPage";
+import MobileSearchBar from "./MobileSearchBar";
 
-function ShopItemComponents({ lists, AddToCart, isLoading }) {
+function ShopItemComponents({ lists, AddToCart, isLoading, onSearch, onSearchType }) {
   return (
     <>
       <motion.div
@@ -13,6 +14,10 @@ function ShopItemComponents({ lists, AddToCart, isLoading }) {
         exit={{ y: "100vw", transition: "0.5s" }}
         className="ShopItemContainer container-fluid m-auto"
       >
+        <MobileSearchBar
+          onSearch={onSearch}
+          onSearchType={onSearchType}
+        />
         {lists.map((list) => {
           return (
             <ItemCard
