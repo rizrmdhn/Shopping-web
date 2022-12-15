@@ -207,3 +207,8 @@ input:not(:placeholder-shown) ~ .reset {
     margin-right: 0px;
   }
 }
+@media screen and (max-width: 600px) {
+  .badge {
+    right: 175px;
+  }
+}

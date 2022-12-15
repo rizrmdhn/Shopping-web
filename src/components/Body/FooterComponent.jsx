@@ -6,7 +6,7 @@ function FooterComponent() {
   return (
     <>
       <div className="footer-1">
-        <div className="footer-item-container">
+        <div className="footer-item-container container-fluid">
           <div className="footer-item-1 row g-2 text-start">
             <div className="footer-item-1-col col">
               <p>Shipping & Returns</p>

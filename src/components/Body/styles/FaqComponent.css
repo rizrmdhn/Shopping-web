@@ -9,7 +9,11 @@
   font-weight: 700;
   margin: 35px auto;
 }
+.faq-header-1 {
+  margin: auto 15px;
+}
 .faq-header-2 {
+  margin: auto 15px;
   display: flex;
 }
 .faq-1 {
@@ -81,13 +85,19 @@
   .faq-container {
     width: 800px !important;
     margin: auto;
-    height: 75vw;
+    height: auto;
   }
 }
 @media screen and (max-width: 750px) {
   .faq-container {
     width: 650px !important;
     margin: auto;
-    height: 85vw;
+    height: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .faq-container {
+    width: auto !important;
+    margin: auto;
   }
 }

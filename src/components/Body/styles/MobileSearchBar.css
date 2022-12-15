@@ -13,7 +13,7 @@
   .mobile-search-nav-item {
     margin: auto;
   }
-  .mobile-search-input {
+  #mobile-search-input {
     width: 450px;
     height: 45px;
   }
@@ -30,8 +30,28 @@
   .mobile-search-nav-item {
     margin: auto;
   }
-  .mobile-search-input {
+  #mobile-search-input {
+    width: 350px;
+    height: 45px;
+  }
+  .form-price {
+    margin: auto;
     width: 250px;
+    height: 45px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .mobile-search-nav {
+    flex-direction: column;
+    margin: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .mobile-search-nav-item {
+    margin: 10px auto;
+  }
+  #mobile-search-input {
+    width: 315px;
     height: 45px;
   }
   .form-price {

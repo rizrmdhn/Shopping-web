@@ -46,6 +46,7 @@
   border: none;
   border-radius: 0px;
   background-color: transparent;
+  color: rgb(189, 189, 189);
   border-bottom: 2px solid red !important;
 }
 #footer-item-3-floatingInput:focus {
@@ -89,5 +90,30 @@
   .subs-col.col {
     margin: auto;
     width: 40%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer-item-1.row.g-2.text-start {
+    margin: auto 25px;
+    width: 550px;
+  }
+  .footer-item-2 {
+    margin: 15px 30px;
+    width: auto;
+  }
+  .footer-form {
+    margin: 15px 30px;
+    width: auto;
+  }
+  .footer-item-3.row.g-2 {
+    margin: auto;
+  }
+  .email-updates.col-md-8 {
+    margin: auto;
+    width: 60%;
+  }
+  .subs-col.col {
+    margin: auto;
+    width: 30%;
   }
 }
