@@ -26,7 +26,9 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <a className="nav-link" href="/#about-page">About</a>
+                  <a className="nav-link" href="/#about-page">
+                    About
+                  </a>
                 </NavItem>
                 <NavItem>
                   <Link className="nav-link" to="/FAQ">
@@ -92,41 +94,32 @@ function HeaderDesktop({ quantity, lists, cart, onSearch, isLoading }) {
                     <LoadingDropDownItem lists={lists} isLoading={isLoading} />
                   </form>
                 </NavItem>
-                <NavItem className="">
+                <NavItem className="nav-item-responsive-item-2">
                   {cart.length !== 0 ? (
                     <Link className="nav-link">
-                      <span className="responsive-quantity-icon position-absolute translate-middle badge rounded-pill bg-danger">
-                        {quantity}
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        fill="currentColor"
+                      <i
                         className="cart-icon bi bi-cart-fill"
-                        viewBox="0 0 16 16"
                         data-bs-toggle="offcanvas"
                         data-bs-target="#offCanvasCart"
                         aria-controls="offCanvasCart"
                       >
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                      </svg>
+                        <span className="badge rounded-pill bg-danger">
+                          {quantity}
+                        </span>
+                      </i>
                     </Link>
                   ) : (
                     <Link className="nav-link" to="/Cart">
-                      <span className="position-absolute translate-middle badge rounded-pill bg-danger">
-                        {quantity}
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        fill="currentColor"
+                      <i
                         className="cart-icon bi bi-cart-fill"
-                        viewBox="0 0 16 16"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offCanvasCart"
+                        aria-controls="offCanvasCart"
                       >
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                      </svg>
+                        <span className="badge rounded-pill bg-danger">
+                          {quantity}
+                        </span>
+                      </i>
                     </Link>
                   )}
                 </NavItem>

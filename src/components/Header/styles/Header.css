@@ -18,6 +18,16 @@
 .Header-3 {
   margin: auto;
 }
+.nav-item-responsive-item-2 > .nav-link > i {
+  display: block;
+  font-size: 25px;
+
+}
+.badge {
+  transform: translate(-50%, -100%) !important;
+  margin: auto;
+  font-size: 10px !important;
+}
 .menu > .nav {
   font-size: 20px;
   --bs-nav-link-font-weight: 500;
@@ -85,7 +95,7 @@ p.dropdown-text {
 /* styling of whole input container */
 .form {
   --timing: 0.3s;
-  --width-of-input: 200px;
+  --width-of-input: 175px;
   --height-of-input: 40px;
   --border-height: 2px;
   --input-bg: #fff;
@@ -186,6 +196,10 @@ input:not(:placeholder-shown) ~ .reset {
   .HeaderMobile > .row.p-2 {
     width: 100%;
   }
+  .header-3-item.item-1 > .nav-link > i {
+    display: block;
+    font-size: 35px;
+  }
   .Header-1.col-2 {
     width: 50%;
   }
@@ -201,7 +215,9 @@ input:not(:placeholder-shown) ~ .reset {
     margin-right: 0px;
   }
   .badge {
-    right: 218px;
+    transform: translate(-50%, -100%) !important;
+    margin: auto;
+    font-size: 12px !important;
   }
   .mobile-menu-btn {
     margin-right: 0px;

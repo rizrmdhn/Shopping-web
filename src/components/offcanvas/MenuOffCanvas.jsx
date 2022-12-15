@@ -58,7 +58,7 @@ function MenuOffCanvas() {
                 data-bs-target="#offCanvasMenu"
                 aria-controls="offCanvasMenu"
               >
-                <a href="/#about-page">About</a>
+                <a href="">About</a>
               </button>
             </NavItem>
             <NavItem>
